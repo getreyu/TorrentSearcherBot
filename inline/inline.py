@@ -12,7 +12,7 @@ from helpers.torrent import torrent_search
 def inlinequery(update, context):
     """Handles the inline query."""
     query = update.inline_query.query
-    buttons = [[InlineKeyboardButton(text="Search Again", switch_inline_query_current_chat="")]]
+    buttons = [[InlineKeyboardButton(text="🔎 SEARCH AGAIN", switch_inline_query_current_chat="")]]
     if len(query) == 0:
         results = [InlineQueryResultArticle(
             id=uuid4(),

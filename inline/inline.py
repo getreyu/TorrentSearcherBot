@@ -50,7 +50,7 @@ def inlinequery(update, context):
             id=uuid4(),
             title="404 Not Found",
             input_message_content=InputTextMessageContent(
-                f"*Sorry there is no results for your query {query}*\n\n{FOOTER_TEXT}", 
+                f"*😑 Sorry there is no results for your query {query}*\n\n{FOOTER_TEXT}", 
                 parse_mode="Markdown"
                 ),
             reply_markup=InlineKeyboardMarkup(buttons)

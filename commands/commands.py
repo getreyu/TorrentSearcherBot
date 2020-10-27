@@ -16,11 +16,11 @@ def start(update: Update, context: CallbackContext):
 def torrent(update: Update, content: CallbackContext):
     if update.message.via_bot != None:
         return
-    search_message = content.bot.send_message(chat_id=update.effective_chat.id, text="Searching your torrent file")
+    search_message = content.bot.send_message(chat_id=update.effective_chat.id, text="😌 Searching your torrent file")
     torrent_name = update.effective_message.text
     response = torrent_search(torrent_name)
     if len(response) == 0:
-        content.bot.edit_message_text(chat_id=update.effective_chat.id, message_id=search_message.message_id, text="No results found")
+        content.bot.edit_message_text(chat_id=update.effective_chat.id, message_id=search_message.message_id, text="😕 No results found")
         return
 
 
@@ -31,4 +31,4 @@ def torrent(update: Update, content: CallbackContext):
         inline_keyboard.append([InlineKeyboardButton(single_torrent_name, callback_data=f"{single_torrent_name}")])
     
     reply_markup = InlineKeyboardMarkup(inline_keyboard)
-    content.bot.edit_message_text(chat_id=update.effective_chat.id, message_id=search_message.message_id, text=f"*🕵🏻‍♂️ Search results for* `[{torrent_name}]` *here ⬇️*.", parse_mode="Markdown", reply_markup=reply_markup)
+    content.bot.edit_message_text(chat_id=update.effective_chat.id, message_id=search_message.message_id, text=f"*🔎 Search results for* `{torrent_name}` *here ⬇️*.", parse_mode="Markdown", reply_markup=reply_markup)

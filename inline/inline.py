@@ -12,7 +12,7 @@ from helpers.torrent import torrent_search
 def inlinequery(update, context):
     """Handles the inline query."""
     query = update.inline_query.query
-    buttons = [[InlineKeyboardButton(text="🔎 SEARCH AGAIN", switch_inline_query_current_chat="")]]
+    buttons = [[InlineKeyboardButton(text="🔎  Search Again", switch_inline_query_current_chat="")]]
     if len(query) == 0:
         results = [InlineQueryResultArticle(
             id=uuid4(),
@@ -111,8 +111,8 @@ def button(update, context):
     type_of_file = response[0].get("type")
     site = response[0].get("site")
     torrent_url = response[0].get("url")
-    buttons = [[InlineKeyboardButton(text="🔎 SEARCH INLINE", switch_inline_query="")]]
+    buttons = [[InlineKeyboardButton(text="🔎  Search Inline", switch_inline_query="")]]
 
-    query.edit_message_text(text=f"*Name : {name}\nSize : {size}\nAge : {age}\nLeechers : {leechers}\nNo: of seeds : {seeders}\nType of File : {type_of_file}\nTorrent Url : {torrent_url}*\n\n*Magnet Link : *`{magnet_link}`\n\n*Powered by {site} website*\n\n{FOOTER_TEXT}", parse_mode="Markdown", reply_markup=InlineKeyboardMarkup(buttons))
+    query.edit_message_text(text=f"*Name : {name}\nSize : {size}\nUploaded Date : {age}\nLeechers : {leechers}\nSeeders : {seeders}\nType of File : {type_of_file}\nTorrent URL : {torrent_url}*\n\n*Magnet Link : *`{magnet_link}`\n\n*Powered by @Neil_Projects", parse_mode="Markdown", reply_markup=InlineKeyboardMarkup(buttons))
 
 

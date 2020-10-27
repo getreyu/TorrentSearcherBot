@@ -31,4 +31,4 @@ def torrent(update: Update, content: CallbackContext):
         inline_keyboard.append([InlineKeyboardButton(single_torrent_name, callback_data=f"{single_torrent_name}")])
     
     reply_markup = InlineKeyboardMarkup(inline_keyboard)
-    content.bot.edit_message_text(chat_id=update.effective_chat.id, message_id=search_message.message_id, text=f"Got the following results for your query *{torrent_name}*. Select the preffered type from the below options", parse_mode="Markdown", reply_markup=reply_markup)
+    content.bot.edit_message_text(chat_id=update.effective_chat.id, message_id=search_message.message_id, text=f"🕵🏻‍♂️ Search results for `{torrent_name}` here ⬇️.", parse_mode="Markdown", reply_markup=reply_markup)

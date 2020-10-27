@@ -113,6 +113,6 @@ def button(update, context):
     torrent_url = response[0].get("url")
     buttons = [[InlineKeyboardButton(text="🔎  Search Inline", switch_inline_query="")]]
 
-    query.edit_message_text(text=f"*Name : {name}\nSize : {size}\nUploaded Date : {age}\nLeechers : {leechers}\nSeeders : {seeders}\nType of File : {type_of_file}\nTorrent URL : {torrent_url}*\n\n*Magnet Link : *`{magnet_link}`\n\n*🌐 Website : {site}*\n\n{FOOTER_TEXT}", parse_mode="Markdown", reply_markup=InlineKeyboardMarkup(buttons))
+    query.edit_message_text(text=f"*Name : {name}\nSize : {size}\nUploaded : {age} ago\nLeechers : {leechers}\nSeeders : {seeders}\nType of File : {type_of_file}\nTorrent URL : {torrent_url}*\n\n*Magnet Link : *`{magnet_link}`\n\n*🌐 Website : {site}*\n\n{FOOTER_TEXT}", parse_mode="Markdown", reply_markup=InlineKeyboardMarkup(buttons))
 
 

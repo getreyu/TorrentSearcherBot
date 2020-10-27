@@ -87,16 +87,16 @@ def button(update, context):
     query = update.callback_query
     query.answer()
     torrent_name = query.data
-    query.edit_message_text(text="Just a moment adding some final touch")
+    query.edit_message_text(text="*🤓 Fetching details... Please wait!*")
     if torrent_name == None:
-        query.edit_message_text(text="Something went wrong")
+        query.edit_message_text(text="*🙄 Something went wrong*")
         return
     response = torrent_search(torrent_name)
     if response == None:
-        query.edit_message_text(text="Something went wrong")
+        query.edit_message_text(text="*🙄 Something went wrong*")
         return
     if len(response) == 0:
-        query.edit_message_text(text="Something went wrong")
+        query.edit_message_text(text="*🙄 Something went wrong*")
         return
 
     

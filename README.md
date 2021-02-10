@@ -12,3 +12,4 @@ Special thanks to [Sumanjay](https://github.com/cyberboysumanjay) for his wonder
 
 - Telegram Updates Channel : [Neil_Projects](https://telegram.dog/Neil_Projects)
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
